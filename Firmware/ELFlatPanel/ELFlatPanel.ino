@@ -37,10 +37,10 @@ enum coverStates
 const unsigned long MOVING_TIME = 2500L;    // motor moving time (for open or close) in ms
 
 const int SERVOPOS_CLOSE = 3;               // servo position for closed cover
-const int SERVOPOS_OPEN = 158;              // servo position for open cover
+const int SERVOPOS_OPEN = 110;              // servo position for open cover
 
 const int SLOW_LOW = 30;                    // low border for slow movement
-const int SLOW_HIGH = 130;                  // high border for slow movement
+const int SLOW_HIGH = 90;                  // high border for slow movement
 const int SLOW_CYCLE = 40;                  // cycle time for slow movement increment (ms)
 const int FAST_CYCLE = 20;                  // cycle time for fast movement increment (ms)
 
@@ -111,10 +111,10 @@ void Reply(char cmd, int arg) {
     msgBuf[5] = (char)a10 + '0';
     msgBuf[6] = (char)a1 + '0';
   }
-  else {  // argument is OOO (NOT 000!)
-    msgBuf[4] = 'O';
-    msgBuf[5] = 'O';
-    msgBuf[6] = 'O';
+  else {  // argument is 000 (NOT oh-oh-oh!)
+    msgBuf[4] = '0';
+    msgBuf[5] = '0';
+    msgBuf[6] = '0';
 
   }
   msgBuf[7] = (char)0x0A;
